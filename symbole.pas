@@ -66,3 +66,48 @@ VAR
     firstletter     : boolean;
     ok, zderzenie   : boolean;
 
+
+procedure Init;
+var
+    driver, mode : integer;
+    errorcode    : integer;
+begin
+    driver := Detect;
+    InitGraph(driver, mode, '');
+    errorcode := GraphResult;
+    if errorcode <> grOk then
+        begin
+            case errorcode of
+            -2 : Writeln('Nie wykryto karty graficznej!');
+            -3 : Writeln('Brak zbioru zawierającego sterownik graficzny! (.BGI)');
+            -4 : Writeln('Niedobry sterownik graficzny! (.BGI)');
+            -5 : Writeln('Brak pamięci do załadowania sterownika graficznego!');
+            end;
+            Halt(1);
+        end;
+    randomize;
+    cleardevice;
+    Maxx := Getmaxx;
+    Maxy := Getmaxy;
+    xcent := maxx div 2;
+    ycent := maxy div 2;
+    Skala := Maxx div 319;
+    Maxcolor := Getmaxcolor;
+    Height := Textheight('M');
+    Width := Textwidth('M');
+end; { Init }
+
+procedure welcome;
+begin
+    Cleardevice;
+    Outtextxy(20, 20, 'SYMBOLE CHEMICZNE - Gra edukacyjna');
+    Outtextxy(30, 40, 'Instrukcja:');
+    Outtextxy(50, 60, 'Statki o nazwach pierwiastków chemicznych musisz');
+    Outtextxy(40, 70, 'doprowadzić bezpiecznie do portu. Po drodze napotykają');
+    Outtextxy(40, 80, 'one góry lodowe. Aby statek nie rozbił się, należy');
+    Outtextxy(40, 90, 'poprawnie wpisać symbol pierwiastka chemicznego, którego');
+    Outtextxy(40, 100, 'nazwę nosi statek.');
+    Outtextxy(30, 120, 'Aby zacząć grę - wpisz 1 lub 2, gdy chcesz skończyć wciścnij ESC.');
+    Outtextxy(50, 140, '1 - gra na podstawowym poziomie (18 pierwiastków)');
+    Outtextxy(50, 150, '2 - poziom bardziej zaawansowany');
+end; { welcome }
