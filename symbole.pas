@@ -192,3 +192,52 @@ for i:=0 to 14 do
     
 getimage(4,140,190,180,obrazki[1]^);
 
+setcolor(0);                { drugi image }
+line(10,179,20,179);
+line(28,179,174,179);
+setcolor(Maxcolor);
+line(28,180,178,180);
+
+putpixel(12,179,Maxcolor);
+putpixel(15,179,Maxcolor);
+putpixel(17,179,Maxcolor);
+putpixel(18,179,Maxcolor);
+putpixel(19,179,Maxcolor);
+
+for i:=0 to 14 do
+    begin;
+        putpixel(31+i*10,180,0);
+        putpixel(32+i*10,180,0);
+        putpixel(33+i*10,180,0);
+        putpixel(31+i*10,179,Maxcolor);
+        putpixel(33+i*10,179,Maxcolor);
+        putpixel(32+i*10,178,Maxcolor);
+        putpixel(33+i*10,178,Maxcolor);
+    end;
+
+getimage(4,140,190,180,obrazki[2]^);
+
+setcolor(0);                { trzeci image }
+line(10,179,20,179);
+line(28,179,174,179);
+line(28,178,174,178);
+setcolor(Maxcolor);
+line(28,180,178,180);
+putpixel(11,179,Maxcolor);
+putpixel(14,179,Maxcolor);
+putpixel(16,179,Maxcolor);
+putpixel(17,179,Maxcolor);
+putpixel(18,179,Maxcolor);
+
+for i:=0 to 14 do
+    begin;
+        putpixel(29+i*10,180,0);
+        putpixel(30+i*10,180,0);
+        putpixel(31+i*10,180,0);
+        putpixel(29+i*10,179,Maxcolor);
+        putpixel(31+i*10,179,Maxcolor);
+        putpixel(29+i*10,178,Maxcolor);
+        putpixel(30+i*10,178,Maxcolor);
+    end;
+
+getimage(4,140,190,180,obrazki[3]^);
