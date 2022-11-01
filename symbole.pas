@@ -168,132 +168,132 @@ end; { rysstatek }
 
 begin
 
-{------------------------------------------------------------------------------}
-{                   Zapamiętanie obrazków do animacji.                         }
-{------------------------------------------------------------------------------}
+    {------------------------------------------------------------------------------}
+    {                   Zapamiętanie obrazków do animacji.                         }
+    {------------------------------------------------------------------------------}
 
-{ ******** Statek ******** }
+    { ******** Statek ******** }
 
-size = imagesize(4,140,190,180);
-for i:=1 to 4 do getmem(obrazki[i],size);
+    size = imagesize(4,140,190,180);
+    for i:=1 to 4 do getmem(obrazki[i],size);
 
-rysstatek(30,180);
+    rysstatek(30,180);
 
-putpixel(13,179,Maxcolor);  { pierwszy image }
-putpixel(16,179,Maxcolor);
-putpixel(18,179,Maxcolor);
-putpixel(19,179,Maxcolor);
+    putpixel(13,179,Maxcolor);  { pierwszy image }
+    putpixel(16,179,Maxcolor);
+    putpixel(18,179,Maxcolor);
+    putpixel(19,179,Maxcolor);
 
-for i:=0 to 14 do
-    begin
-        putpixel(34+i*10,180,0);
-        putpixel(34+i*10,179,Maxcolor);
-    end;
-    
-getimage(4,140,190,180,obrazki[1]^);
+    for i:=0 to 14 do
+        begin
+            putpixel(34+i*10,180,0);
+            putpixel(34+i*10,179,Maxcolor);
+        end;
+        
+    getimage(4,140,190,180,obrazki[1]^);
 
-setcolor(0);                { drugi image }
-line(10,179,20,179);
-line(28,179,174,179);
-setcolor(Maxcolor);
-line(28,180,178,180);
+    setcolor(0);                { drugi image }
+    line(10,179,20,179);
+    line(28,179,174,179);
+    setcolor(Maxcolor);
+    line(28,180,178,180);
 
-putpixel(12,179,Maxcolor);
-putpixel(15,179,Maxcolor);
-putpixel(17,179,Maxcolor);
-putpixel(18,179,Maxcolor);
-putpixel(19,179,Maxcolor);
+    putpixel(12,179,Maxcolor);
+    putpixel(15,179,Maxcolor);
+    putpixel(17,179,Maxcolor);
+    putpixel(18,179,Maxcolor);
+    putpixel(19,179,Maxcolor);
 
-for i:=0 to 14 do
-    begin
-        putpixel(31+i*10,180,0);
-        putpixel(32+i*10,180,0);
-        putpixel(33+i*10,180,0);
-        putpixel(31+i*10,179,Maxcolor);
-        putpixel(33+i*10,179,Maxcolor);
-        putpixel(32+i*10,178,Maxcolor);
-        putpixel(33+i*10,178,Maxcolor);
-    end;
+    for i:=0 to 14 do
+        begin
+            putpixel(31+i*10,180,0);
+            putpixel(32+i*10,180,0);
+            putpixel(33+i*10,180,0);
+            putpixel(31+i*10,179,Maxcolor);
+            putpixel(33+i*10,179,Maxcolor);
+            putpixel(32+i*10,178,Maxcolor);
+            putpixel(33+i*10,178,Maxcolor);
+        end;
 
-getimage(4,140,190,180,obrazki[2]^);
+    getimage(4,140,190,180,obrazki[2]^);
 
-setcolor(0);                { trzeci image }
-line(10,179,20,179);
-line(28,179,174,179);
-line(28,178,174,178);
-setcolor(Maxcolor);
-line(28,180,178,180);
-putpixel(11,179,Maxcolor);
-putpixel(14,179,Maxcolor);
-putpixel(16,179,Maxcolor);
-putpixel(17,179,Maxcolor);
-putpixel(18,179,Maxcolor);
+    setcolor(0);                { trzeci image }
+    line(10,179,20,179);
+    line(28,179,174,179);
+    line(28,178,174,178);
+    setcolor(Maxcolor);
+    line(28,180,178,180);
+    putpixel(11,179,Maxcolor);
+    putpixel(14,179,Maxcolor);
+    putpixel(16,179,Maxcolor);
+    putpixel(17,179,Maxcolor);
+    putpixel(18,179,Maxcolor);
 
-for i:=0 to 14 do
-    begin
-        putpixel(29+i*10,180,0);
-        putpixel(30+i*10,180,0);
-        putpixel(31+i*10,180,0);
-        putpixel(29+i*10,179,Maxcolor);
-        putpixel(31+i*10,179,Maxcolor);
-        putpixel(29+i*10,178,Maxcolor);
-        putpixel(30+i*10,178,Maxcolor);
-    end;
+    for i:=0 to 14 do
+        begin
+            putpixel(29+i*10,180,0);
+            putpixel(30+i*10,180,0);
+            putpixel(31+i*10,180,0);
+            putpixel(29+i*10,179,Maxcolor);
+            putpixel(31+i*10,179,Maxcolor);
+            putpixel(29+i*10,178,Maxcolor);
+            putpixel(30+i*10,178,Maxcolor);
+        end;
 
-getimage(4,140,190,180,obrazki[3]^);
+    getimage(4,140,190,180,obrazki[3]^);
 
-setcolor(0);                { czwarty image }
-line(10,179,20,179);
-line(28,179,174,179);
-line(28,179,174,178);
-setcolor(Maxcolor);
-line(28,180,178,180);
-putpixel(13,179,Maxcolor);
-putpixel(15,179,Maxcolor);
-putpixel(16,179,Maxcolor);
-putpixel(19,179,Maxcolor);
+    setcolor(0);                { czwarty image }
+    line(10,179,20,179);
+    line(28,179,174,179);
+    line(28,179,174,178);
+    setcolor(Maxcolor);
+    line(28,180,178,180);
+    putpixel(13,179,Maxcolor);
+    putpixel(15,179,Maxcolor);
+    putpixel(16,179,Maxcolor);
+    putpixel(19,179,Maxcolor);
 
-for i:=1 to 14 do
-    begin
-        putpixel(28+i*10,180,0);
-        putpixel(28+i*10,179,Maxcolor);
-    end;
+    for i:=1 to 14 do
+        begin
+            putpixel(28+i*10,180,0);
+            putpixel(28+i*10,179,Maxcolor);
+        end;
 
-getimage(4,140,190,180,obrazki[4]^);
+    getimage(4,140,190,180,obrazki[4]^);
 
-{ ******** Góra lodowa ******** }
+    { ******** Góra lodowa ******** }
 
-size := imagesize(300,180,355,140);
-for i:=5 to 6 do getmem(obrazki[i],size);
+    size := imagesize(300,180,355,140);
+    for i:=5 to 6 do getmem(obrazki[i],size);
 
-moveto(300,180);
-linerel(15,-40);
-linerel(30,10);
-linerel(10,30);
-getimage(300,180,355,140,obrazki[5]^);
-setcolor(0);
-moveto(300,180);
-linerel(15,-40);
-linerel(30,10);
-linerel(10,30);
+    moveto(300,180);
+    linerel(15,-40);
+    linerel(30,10);
+    linerel(10,30);
+    getimage(300,180,355,140,obrazki[5]^);
+    setcolor(0);
+    moveto(300,180);
+    linerel(15,-40);
+    linerel(30,10);
+    linerel(10,30);
 
-setcolor(Maxcolor);
-moveto(302,180);
-linerel(13,-40);
-linerel(30,9);
-linerel(11,31);
-getimage(300,180,355,140,obrazki[6]^);
+    setcolor(Maxcolor);
+    moveto(302,180);
+    linerel(13,-40);
+    linerel(30,9);
+    linerel(11,31);
+    getimage(300,180,355,140,obrazki[6]^);
 
-{ ******** Zatopienie ******** }
+    { ******** Zatopienie ******** }
 
-size := imagesize(410,120,590,160);
-for i:=10 to 14 do getmem(obrazki[i],size);
-setfillstyle(Solidfill,0);
+    size := imagesize(410,120,590,160);
+    for i:=10 to 14 do getmem(obrazki[i],size);
+    setfillstyle(Solidfill,0);
 
-for i=:1 to 5 do
-    begin
-        bar(410,120,590,200);
-        rysstatek(430,160+i*8);
-        bar(410,160,590,200);
-        getimage(410,120,590,160,obrazki[i+9]^);
-    end;
+    for i=:1 to 5 do
+        begin
+            bar(410,120,590,200);
+            rysstatek(430,160+i*8);
+            bar(410,160,590,200);
+            getimage(410,120,590,160,obrazki[i+9]^);
+        end;
