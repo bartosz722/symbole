@@ -297,3 +297,59 @@ begin
             bar(410,160,590,200);
             getimage(410,120,590,160,obrazki[i+9]^);
         end;
+
+    { ******** Woda ******** }
+    
+    size := imagesize(10,190,Maxx-2,192);
+    for i:=7 to 9 do getmem(obrazki[i],size);
+    
+    setfillstyle(Solidfill,Maxcolor);
+    line(10,192,Maxx-5,192);
+    getimage(10,190,Maxx-2,192,obrazki[7]^);
+    
+    for i:=0 to (Maxx div 10)-2 do
+        begin
+            putpixel(i*10+12,192,0);
+            putpixel(i*10+12,191,Maxcolor);
+        end;
+    getimage(10,190,Maxx-2,192,obrazki[8]^);
+    
+    for i:=0 to (Maxx div 10)-2 do
+        begin
+            putpixel(i*10+11,192,0);
+            putpixel(i*10+12,192,0);
+            putpixel(i*10+13,192,0);
+            putpixel(i*10+11,191,Maxcolor);
+            putpixel(i*10+12,191,0);
+            putpixel(i*10+13,191,Maxcolor);
+            putpixel(i*10+12,190,Maxcolor);
+        end;
+    getimage(10,190,Maxx-2,192,obrazki[9]^);
+    
+end; { learn }
+
+
+procedure animstatprosto(x : integer);
+begin
+    putimage(x,ycent,obrazki[1+(animindex div 3) mod 4]^,normalput);
+end;
+
+
+procedure animstattonie;
+begin
+    putimage(pozycja,ycent,obrazki[10+(animindex div 6) mod 5]^,normalput);
+end;
+
+
+procedure animgora;
+begin
+    putimage(gorax,ycent,obrazki[5+(animindex div 5) mod 2]^,normalput);
+end;
+
+
+procedure animwoda;
+begin
+    putimage(wodax,ycent+38,obrazki[7+(animindex div 5) mod 3]^,normalput);
+end;
+
+
