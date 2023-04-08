@@ -353,3 +353,23 @@ begin
 end;
 
 
+procedure topsie;
+begin
+    setfillstyle(Solidfill,0);
+    bar(xcent-50,ycent div 2,xcent+50,ycent div 2 + Height);
+    setfillstyle(Solidfill,Maxcolor);
+    outtextxy(xcent-50,ycent div 2,'ŹLE! ! Ma być '+symb);
+    animindex:=1;
+    repeat
+        animstattonie;
+        animgora;
+        animwoda;
+        brr(20);brr(20);brr(20);
+        animindex:=(animindex+1) mod 60;
+    until animindex>24;
+    delay(1000);
+    setfillstyle(Solidfill,0);
+    bar(0,0,Maxx,Maxy);
+    setfillstyle(Solidfill,Maxcolor);
+end; { topsie }
+
