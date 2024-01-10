@@ -373,3 +373,46 @@ begin
     setfillstyle(Solidfill,Maxcolor);
 end; { topsie }
 
+
+procedure jedzdokonca;
+begin
+    punkty:=punkty+1;
+    czasreakcji:=czasreakcji+pozycja-10;
+    setfillstyle(Solidfill,0);
+    bar(0,ycent div 2 - 2*Height,Maxx,ycent div 2 + 2*Height);
+    setfillstyle(Solidfill,Maxcolor);
+    
+    str(punkty:2,outstr);
+    outtextxy(xcent div 2,ycent div 2 - 2*Height,'Punkty : '+outstr);
+    str(czasreakcji:5,outstr);
+    outtextxy(xcent,ycent div 2 - 2*Height,'Czas reakcji : '+outstr);
+    outtextxy(xcent-50,ycent div 2,'DOBRZE !');
+    
+    repeat
+        animgora;
+        animwoda;
+        animstatprosto(pozycja);
+        brr(20);
+        animindex:=(animindex+1) mod 60;
+        pozycja:=pozycja+3*SZYBKOSC;
+    until pozycja+180>Maxx-5;
+    setfillstyle(Solidfill,0);
+    bar(0,0,Maxx,Maxy);
+    setfillstyle(Solidfill,Maxcolor);
+    
+end; { jedzdokonca }
+
+
+procedure ocena;
+begin
+    setfillstyle(Solidfill,0);
+    bar(0,0,Maxx,Maxy);
+    setfillstyle(Solidfill,Maxcolor);
+    
+        setfillstyle(Solidfill,0);
+        bar(0,ycent div 2 - 2*Height,Maxx,ycent div 2 + 2*Height);
+        setfillstyle(Solidfill,Maxcolor);
+        
+        str(ILOSC:3,outstr);
+        outtextxy(xcent div 2,ycent div 2 - 2*Height,'Ilość pytań : '+outstr);
+        
