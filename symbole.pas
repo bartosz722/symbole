@@ -414,5 +414,24 @@ begin
         setfillstyle(Solidfill,Maxcolor);
         
         str(ILOSC:3,outstr);
-        outtextxy(xcent div 2,ycent div 2 - 2*Height,'Ilość pytań : '+outstr);
-        
+        outtextxy(xcent div 2,ycent div 2 - 2*Height,'Ilość pytań  : '+outstr);
+        str(punkty:3,outstr);
+        outtextxy(xcent div 2,ycent div 2 ,'Punkty       : '+outstr);
+        str(czasreakcji:5,outstr);
+        outtextxy(xcent div 2,ycent div 2 + 2*Height,'Czas reakcji : '+outstr);
+        if punkty>0 then str(czasreakcji/punkty:4:2,outstr) else outstr:='---';
+        outtextxy(xcent div 2,ycent div 2 + 4*Height,'Czas średni  : '+outstr);
+        outtextxy(xcent div 2,ycent div 2 + 6*Height,'Naciśnij jakiś klawisz...');
+        ch:=readkey;
+end;
+
+{--------------------------------------------------------------------------------}
+{--------------------------------------------------------------------------------}
+
+
+BEGIN { Program Symbole }
+
+
+Init;
+learn;
+
