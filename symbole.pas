@@ -435,3 +435,47 @@ BEGIN { Program Symbole }
 Init;
 learn;
 
+repeat
+    welcome;
+    
+    repeat
+        ch:=upcase(readkey);
+    until (ch='1') or (ch='2') or (ch=ESC);
+    if ch=ESC then begin closegraph; Halt(0); end;
+    
+    if ch='1' then level:=18 else level:=MAXPIERW;
+    
+    clearviewport;
+    wodax:=10;
+    punkty:=0;
+    czasreakcji:=0;
+    
+    for licznik :=1 to ILOSC do
+    begin
+        los:=random(level)+1;
+        
+        setfillstyle(Solidfill,0);
+        bar(0,ycent div 2,Maxx,ycent div 2 + Height);
+        setfillstyle(Solidfill,Maxcolor);
+        
+        outtextxy(xcent-50,ycent div 2,pierwiastek[los].nazwa);
+        
+        symb:=pierwiastek[los].symbol;
+        animindex:=1;
+        pozycja:=10;
+        gorax:=xcent;
+        if licznik<2*ILOSC div 3 then gorax:=xcent+xcent div 4;
+        if licznik<ILOSC div 3 then gorax:=Maxx*3 div 4;
+        ok:=FALSE;
+        firstletter:=TRUE;
+        
+        repeat
+        
+            animgora;
+            animwoda;
+            
+            animstatprosto(pozycja);
+            brr(pozycja + 20);
+            
+            zderzenie:=(pozycja+180>=gorax);
+            
